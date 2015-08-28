@@ -87,7 +87,7 @@ Explain what you did in this step!
     2. circle.y
     3. circle.rotation
     
-    To update these three properties, you need to respectively add to their current values:
+    To update these three properties, you need to respectively _add to their current values_:
 
     1. circle.velocityX
     2. circle.velocityY
