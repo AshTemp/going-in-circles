@@ -1,4 +1,4 @@
-(function (window) {
+(function (window, createjs) {
     window.opspark = window.opspark || {};
     
     window.opspark.makeApp = function (updateable) {
@@ -8,7 +8,7 @@
             _updateable, 
             _app;
         
-        _stage  = new createjs.Stage(canvas);
+        _stage  = new createjs.Stage('canvas');
         _canvas = document.getElementById('canvas');
         _updateable = (updateable) ? [].concat(updateable) : [];
         
@@ -18,6 +18,7 @@
             view: new createjs.Container(),
             
             addUpdateable: function(updateable) {
+                if (typeof updateable === "function") updateable = {update: updateable};
                 _updateable.push(updateable);
                 return _app;
             },
@@ -39,7 +40,6 @@
             }
         };
         
-        
         window.addEventListener('resize', resizeCanvas, false);
         function resizeCanvas(e) {
             _canvas.width = window.innerWidth;
@@ -55,4 +55,4 @@
 
         return _app;
     };
-}(window));
+}(window, window.createjs));

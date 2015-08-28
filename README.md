@@ -71,7 +71,7 @@ Things you'll need to accomplish your tasks:
 
 * You should now see 100 randomly drawn circles within the area of your canvas!
 
-### Animate the Circles
+### TODO 4 : Animate the Circles
 
 1. Create a function called `update()`, it should take no parameters and return no value.
 2. Add your `update` function to the `app` using its `addUpdateable()` API, like so:
@@ -94,3 +94,21 @@ Explain what you did in this step!
     3. circle.rotationalVelocity
 
     How do you do this?
+    
+### REFRESH YOUR PROJECT
+
+* Your 100 circles should now be moving at random velocities on their x, y and rotational axis!
+
+### TODO 5 : Create Finite Space
+
+1. Also within your loop within your `update()` function, create if else-if statements to enforce boundaries:
+
+    If the circle has left the top, right, bottom or left side of the screen, fully, you want to re-position the circle off the _opposite_ side of the stage.
+    
+    To do this, you'll need to compare the `circle.x` _or_ the `circle.y` to the `canvas.width` _or_ the `canvas.height`.  You will also need to factor in the `radius` of the `circle`, which is available at `circle.radius`.
+    
+    To understand why, you must be aware that the circle's x and y are centered around itself, such that if you place the circle at `circle.x = 0;` - it will be exactly **half off the left side of the stage**.
+    
+### REFRESH YOUR PROJECT
+
+* Your 100 circles should now come back onto the opposite side of the stage from the point they exited.
